@@ -1,0 +1,9 @@
+{% set countdown_id = 13186533908 %}
+{% set countdown = crm_object("p8697527_countdowns", countdown_id, "countdown_name,spots_left") %}
+
+{% if countdown and countdown.spots_left > 0 %}
+  <!-- Start of Payments Embed Script -->
+  <div class="payments-iframe-container" data-src="https://app.hubspot.com/payments/F9hJQxJz?referrer=PAYMENT_LINK_EMBED&layout=embed-full"></div>
+  <script type="text/javascript" src="https://static.hsappstatic.net/payments-embed/ex/PaymentsEmbedCode.js"></script>
+  <!-- End of Payments Embed Script -->
+{% endif %}

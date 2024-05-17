@@ -1,0 +1,18 @@
+{% set countdown_id = 13186533908 %}
+{% set countdown = crm_object("p8697527_countdowns", countdown_id, "countdown_name,spots_left") %}
+
+<div id="event-container">
+  {% if countdown %}
+    {% if countdown.spots_left > 0 %}
+      <h2 id="spots-left">Act Now! Only {{ countdown.spots_left }} spots remain!</h2>
+    {% else %}
+      <h2 id="spots-left" style="display: none;">Act Now! Only {{ countdown.spots_left }} spots remain!</h2>
+      <div id="sold-out-message">
+        <h2>We're all sold out. You snooze, you lose.</h2>
+      </div>
+    {% endif %}
+  {% else %}
+    <h2 id="spots-left">No spots left</h2>
+  {% endif %}
+</div>
+
